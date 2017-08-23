@@ -14,6 +14,7 @@
     <% @people.each do |person| %>
       <tr>
         <td><%= person.name %></td>
+        <td><%= person.last_name %></td>
         <td><%= person.joined %></td>
         <td><%= person.going %></td>
         <td><%= link_to 'Show', person %></td>

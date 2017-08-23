@@ -1,0 +1,8 @@
+<h1>HAPPY FRIDAY</h1>
+<h2>Here is your seating arrangements</h2>
+<% @people_groups.each_with_index do |g,i| %>
+  <h3>Group <%= i %></h3>
+  <% g.each do |p| %>
+    <p><%= "#{p.name} #{p.last_name}" %></p>
+  <% end %>
+<% end %>

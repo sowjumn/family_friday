@@ -19,13 +19,13 @@ class PersonShuffler
     end
     list
   end
-
+  
   def shuffle
-
+    @people = @people.shuffle
   end
 
   def get_group_number(gr_arr,len,group_size)
-    return if len == 0
+    return if len <= 0
     count = len/group_size
     count.times { gr_arr.push(group_size) }
     len = len % group_size
@@ -33,7 +33,7 @@ class PersonShuffler
       group_size = len
     elsif len < MIN_GROUP && len > 0
       len += gr_arr.pop
-      group_size = MAX_GROUP - 1
+      group_size = group_size - 1
     end
     get_group_number(gr_arr,len,group_size)
   end
